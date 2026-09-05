@@ -36,3 +36,7 @@
 	min-width: 0;
 	overflow: hidden;
 }
+
+.katex-html svg {
+  height: inherit;
+}

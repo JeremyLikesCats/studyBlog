@@ -1,7 +1,10 @@
 :root {
-	--heat-0: var(--sl-color-gray-6);
-	--heat-1: var(--sl-color-accent-low);
-	--heat-2: color-mix(in srgb, var(--sl-color-accent-low) 45%, var(--sl-color-accent));
-	--heat-3: var(--sl-color-accent);
-	--heat-4: var(--sl-color-accent-high);
+	--heat-from: var(--sl-color-gray-6);
+	--heat-to: color-mix(in oklch, var(--sl-color-accent) 72%, #c2611a);
+
+	--heat-0: var(--heat-from);
+	--heat-1: color-mix(in oklch, var(--heat-to) 25%, var(--heat-from));
+	--heat-2: color-mix(in oklch, var(--heat-to) 50%, var(--heat-from));
+	--heat-3: color-mix(in oklch, var(--heat-to) 75%, var(--heat-from));
+	--heat-4: var(--heat-to);
 }

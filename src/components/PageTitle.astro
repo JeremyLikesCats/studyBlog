@@ -2,13 +2,24 @@
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 
 const { hours } = Astro.locals.starlightRoute.entry.data;
+const { body, data } = Astro.locals.starlightRoute.entry
+const words = body
+  ? body.trim().split(/\s+/).filter(Boolean).length
+  : 0;
+    
 ---
 
 <div class="title-with-hours">
 	<Default />
-	{hours != null && (
-		<span class="hours-tag">{hours}h studied</span>
-	)}
+    <div class="stats">
+        {hours != null && (
+            <span class="tag">{hours}h studied</span>
+        )}
+        {body != null && (
+            <span class="tag">{body.trim().split(/\s+/).filter(Boolean).length} word{words === 1 ? "": "s"}</span>
+        )}
+    </div>
+
 </div>
 
 <style>
@@ -19,13 +30,12 @@ const { hours } = Astro.locals.starlightRoute.entry.data;
         flex-direction: column;
 	}
 
-	.hours-tag {
-		font-size: var(--sl-text-sm);
-		font-weight: 600;
-		padding: 0.2em 0.65em;
-		border-radius: 999px;
-		border: 1px solid var(--sl-color-orange);
-		background: var(--sl-color-orange-low);
-		color: var(--sl-color-white);
+	.tag {
+		color: var(--sl-color-gray-2);
 	}
+
+    .stats {
+        display: flex;
+        gap: 0.75rem 1rem;
+    }
 </style>

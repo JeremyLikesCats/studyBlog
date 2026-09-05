@@ -62,7 +62,7 @@ export default function StudyHeatmap({ data }: Props) {
           showWeekdayLabels={false}
           labels={{
             legend: { less: 'Less', more: 'More' },
-            totalCount: '{{count}} hours studied in {{year}}',
+            totalCount: '{{count}} hours studied!',
           }}
           theme={{ light: [...heat], dark: [...heat] }}
         />

@@ -23,7 +23,7 @@ export default defineConfig({
 					items: [{ autogenerate: { directory: 'posts' } }],
 				},
 			],
-			
+			favicon: '/src/assets/favicon.png',
 		}),
 		react(),
 	],

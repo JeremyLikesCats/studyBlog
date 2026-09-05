@@ -16,7 +16,6 @@ export default defineConfig({
 			components: {
 				PageTitle: './src/components/PageTitle.astro',
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 
 				{

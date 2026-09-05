@@ -7,7 +7,7 @@ import starlightThemeFlexoki from 'starlight-theme-flexoki'
 export default defineConfig({
 	integrations: [
 		starlight({
-			plugins: [starlightThemeFlexoki()],
+			plugins: [starlightThemeFlexoki({ accentColor: 'orange' })],
 			title: 'LaundromatCat',
 			customCss: [
 				'./src/styles/hero.css',

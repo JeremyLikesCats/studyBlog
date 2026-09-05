@@ -4,6 +4,7 @@
 
 .hero h1 {
     font-family: "JetBrains Mono", monospace;
+    font-size: clamp(1.5rem, 3.3vw, 6rem) !important;
 }
 .hero {
 	padding-block: 0rem !important;
@@ -20,22 +21,7 @@
 	--sl-content-width: 65rem;
     margin: 2rem;
 }
-:root,
-[data-theme='dark'] {
-	--heat-0: #21262d;
-	--heat-1: #663500;
-	--heat-2: #a35600;
-	--heat-3: #e07500;
-	--heat-4: #ffa116;
-}
 
-[data-theme='light'] {
-	--heat-0: #ebedf0;
-	--heat-1: #fed7aa;
-	--heat-2: #fb923c;
-	--heat-3: #ea580c;
-	--heat-4: #c2410c;
-}
 
 .card-grid > * {
 	min-width: 0;

@@ -1,0 +1,31 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const { hours } = Astro.locals.starlightRoute.entry.data;
+---
+
+<div class="title-with-hours">
+	<Default />
+	{hours != null && (
+		<span class="hours-tag">{hours}h studied</span>
+	)}
+</div>
+
+<style>
+	.title-with-hours {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem 1rem;
+        flex-direction: column;
+	}
+
+	.hours-tag {
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		padding: 0.2em 0.65em;
+		border-radius: 999px;
+		border: 1px solid var(--sl-color-orange);
+		background: var(--sl-color-orange-low);
+		color: var(--sl-color-white);
+	}
+</style>

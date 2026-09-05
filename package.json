@@ -10,8 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^6.0.5",
     "@astrojs/starlight": "^0.42.0",
     "astro": "^7.2.10",
-    "sharp": "^0.35.3"
+    "react": "^19.2.8",
+    "react-activity-calendar": "^3.2.1",
+    "react-dom": "^19.2.8",
+    "sharp": "^0.35.3",
+    "starlight-theme-flexoki": "^0.3.0"
   }
 }

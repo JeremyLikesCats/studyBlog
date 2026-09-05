@@ -1,0 +1,48 @@
+/* Change font of hero title */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+.hero h1 {
+    font-family: "JetBrains Mono", monospace;
+}
+.hero {
+	padding-block: 0rem !important;
+	gap: 0.75rem !important;
+}
+.hero > img {
+	border-radius: 50%;
+	object-fit: cover;      /* crop to a circle if the photo isn’t square */
+	object-position: center;
+    padding: 1rem
+}
+:root {
+	/* Default is 45rem. Increase to 65rem, 80rem, or 100% */
+	--sl-content-width: 65rem;
+    margin: 2rem;
+}
+:root,
+[data-theme='dark'] {
+	--heat-0: #21262d;
+	--heat-1: #663500;
+	--heat-2: #a35600;
+	--heat-3: #e07500;
+	--heat-4: #ffa116;
+}
+
+[data-theme='light'] {
+	--heat-0: #ebedf0;
+	--heat-1: #fed7aa;
+	--heat-2: #fb923c;
+	--heat-3: #ea580c;
+	--heat-4: #c2410c;
+}
+
+.card-grid > * {
+	min-width: 0;
+}
+
+.study-heatmap-wrapper {
+	width: 100%;
+	min-width: 0;
+	overflow: hidden;
+}

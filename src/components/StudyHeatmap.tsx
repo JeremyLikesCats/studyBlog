@@ -31,7 +31,7 @@ export default function StudyHeatmap({ data }: Props) {
       if (width <= 0) return;
 
       const col = MIN_BLOCK + GAP;
-      const fit = Math.max(4, Math.floor(width / col));
+      const fit = Math.max(4, Math.floor(width / col) - 1);
       setWeeks(fit);
       setBlockSize(Math.max(MIN_BLOCK, Math.floor(width / fit) - GAP));
       setReady(true);

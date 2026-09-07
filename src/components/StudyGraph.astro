@@ -11,7 +11,10 @@ const hoursByDate = new Map<string, number>();
 
 for (const doc of docs) {
 	const { hours, studiedOn } = doc.data;
-	if (!hours || !studiedOn) continue;
+	if (hours !== 0) {
+		if (!hours || !studiedOn) continue;
+	}
+	
 
 	// Format date to "YYYY-MM-DD"
 	const dateStr = studiedOn.toISOString().slice(0, 10);

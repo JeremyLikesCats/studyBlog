@@ -24,7 +24,7 @@ for (const doc of docs) {
 // 3. Build a full 365-day array for GitHub-style layout
 const today = new Date();
 const start = new Date(today);
-start.setDate(today.getDate() - 364);
+start.setDate(today.getDate() - 500);
 
 const calendarData: Array<{ date: string; count: number; level: 0 | 1 | 2 | 3 | 4 }> = [];
 

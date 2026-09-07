@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ActivityCalendar } from 'react-activity-calendar';
+import 'react-activity-calendar/tooltips.css';
 
 interface Props {
   data: Array<{ date: string; count: number; level: 0 | 1 | 2 | 3 | 4 }>;
@@ -31,9 +32,9 @@ export default function StudyHeatmap({ data }: Props) {
       if (width <= 0) return;
 
       const col = MIN_BLOCK + GAP;
-      const fit = Math.max(4, Math.floor(width / col));
+      const fit = Math.max(4, Math.floor((width + GAP) / col));
       setWeeks(fit);
-      setBlockSize(Math.max(MIN_BLOCK, Math.floor(width / fit) - GAP));
+      setBlockSize(Math.max(MIN_BLOCK, Math.floor((width + GAP) / fit) - GAP));
       setReady(true);
     };
 
@@ -52,17 +53,32 @@ export default function StudyHeatmap({ data }: Props) {
     };
   }, []);
 
+  // Compute slice so the first column always begins on Sunday.
+  // This prevents empty/missing squares at the top of the leftmost column.
+  const lastEntry = data[data.length - 1];
+  const lastDay = lastEntry
+    ? new Date(`${lastEntry.date}T00:00:00Z`).getUTCDay()
+    : 0;
+  const daysToSlice = (weeks - 1) * 7 + lastDay + 1;
+  const visibleData = data.slice(-daysToSlice);
+
   return (
     <div ref={ref} className="study-heatmap-wrapper">
       {ready && (
         <ActivityCalendar
-          data={data.slice(-(weeks * 7))}
+          data={visibleData}
           blockSize={blockSize}
           blockMargin={GAP}
           showWeekdayLabels={false}
           labels={{
             legend: { less: 'Less', more: 'More' },
             totalCount: '{{count}} hours studied!',
+          }}
+          tooltips={{
+            activity: {
+              text: (activity) =>
+                `${activity.count} hour${activity.count === 1 ? '' : 's'} studied on ${activity.date}`,
+            },
           }}
           theme={{ light: [...heat], dark: [...heat] }}
         />

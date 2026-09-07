@@ -11,21 +11,23 @@ const hoursByDate = new Map<string, number>();
 
 for (const doc of docs) {
 	const { hours, studiedOn } = doc.data;
-	if (!hours || !studiedOn) continue;
+	if (hours == null || !studiedOn) continue;
 
 	// Format date to "YYYY-MM-DD"
 	const dateStr = studiedOn.toISOString().slice(0, 10);
 	hoursByDate.set(dateStr, (hoursByDate.get(dateStr) ?? 0) + hours);
 }
 
-// 3. Build a full 365-day array for GitHub-style layout
+// 3. Build a full array for GitHub-style layout ending on today (UTC midnight anchor)
 const today = new Date();
-const start = new Date(today);
-start.setDate(today.getDate() - 364);
+const todayUTC = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+
+const startUTC = new Date(todayUTC);
+startUTC.setUTCDate(startUTC.getUTCDate() - 500);
 
 const calendarData: Array<{ date: string; count: number; level: 0 | 1 | 2 | 3 | 4 }> = [];
 
-for (let d = new Date(start); d <= today; d.setDate(d.getDate() + 1)) {
+for (let d = new Date(startUTC); d <= todayUTC; d.setUTCDate(d.getUTCDate() + 1)) {
 	const dateStr = d.toISOString().slice(0, 10);
 	const hours = hoursByDate.get(dateStr) ?? 0;
 

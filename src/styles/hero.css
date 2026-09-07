@@ -34,7 +34,14 @@
 .study-heatmap-wrapper {
 	width: 100%;
 	min-width: 0;
-	overflow: hidden;
+	overflow-x: auto;
+	scrollbar-width: none;       /* Firefox & modern browsers */
+	-ms-overflow-style: none;    /* IE and Edge */
+}
+
+/* Chrome, Safari, and Opera */
+.study-heatmap-wrapper::-webkit-scrollbar {
+	display: none;
 }
 
 .katex-html svg {

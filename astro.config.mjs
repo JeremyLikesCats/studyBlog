@@ -31,6 +31,10 @@ export default defineConfig({
                 label: 'Posts',
                 items: [{ autogenerate: { directory: 'posts' } }],
             },
+	    {
+		label: 'Notes',
+		items: [{ autogenerate: { directory: 'notes' } }],
+	    },
         ],
         favicon: '/src/assets/favicon.png',
 		}), react(), sitemap()],

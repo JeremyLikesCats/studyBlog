@@ -1,5 +1,5 @@
 ---
-title: Chapter 1: Indroduction, Vector Functions and Electrostatics
+title: "Chapter 1: Indroduction, Vector Functions and Electrostatics"
 ---
 
 # Introduction, Vector Functions and Electrostatics

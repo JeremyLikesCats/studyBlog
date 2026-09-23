@@ -1,8 +1,6 @@
 ---
-title: "Chapter 1: Indroduction, Vector Functions and Electrostatics"
+title: "Chapter 1: Introduction, Vector Functions and Electrostatics"
 ---
-
-# Introduction, Vector Functions and Electrostatics
 
 ## Vector Functions
 Vector functions are simply functions that can be expressed like this:

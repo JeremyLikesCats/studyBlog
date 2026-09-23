@@ -26,16 +26,17 @@ export default defineConfig({
             PageTitle: './src/components/PageTitle.astro',
         },
         sidebar: [
-
-            {
-                label: 'Posts',
-                items: [{ autogenerate: { directory: 'posts' } }],
-            },
 	    {
 		label: 'Notes',
 		items: [{ autogenerate: { directory: 'notes' } }],
 	    },
-        ],
+        
+            {
+                label: 'Posts',
+                items: [{ autogenerate: { directory: 'posts' } }],
+            },
+	    
+	],
         favicon: '/src/assets/favicon.png',
 		}), react(), sitemap()],
 });

@@ -1,3 +1,7 @@
+---
+title: Chapter 1
+---
+
 # Introduction, Vector Functions and Electrostatics
 
 ## Vector Functions

@@ -1,5 +1,5 @@
 ---
-title: Chapter 1
+title: "Chapter 1: Introduction, Vector Functions and Electrostatics"
 ---
 
 # Introduction, Vector Functions and Electrostatics
